@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+      <div class="lid one"></div>
+      <div class="lid two"></div>
+      <div class="envelope"></div>
+      <div class="letter">
+          <div class="text">
+              <strong> Dear Théo</strong>
+              <p>
+                  Happy Valentine’s Day I’m so grateful to have you in my life.
+                  Thank you for being so kind to me. I miss you so much,
+                  and I can’t wait to be with you again. Je t’aime❤️😘
+              </p>
+          </div>
+      </div>
+    </div>
+
+    <!-- JavaScript at the end of the body -->
+    <script>
+      const wrapper = document.querySelector('.wrapper');
+      wrapper.addEventListener('mouseover', () => {
+        const heartsContainer = document.createElement('div');
+        heartsContainer.classList.add('hearts');
+
+        for (let i = 0; i < 20; i++) {
+          const heart = document.createElement('div');
+          heart.classList.add('heart');
+          heart.style.left = Math.random() * 100 + '%';
+          heart.style.animationDelay = Math.random() * 2 + 's';
+          heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+          heartsContainer.appendChild(heart);
+        }
+
+        wrapper.appendChild(heartsContainer);
+
+        setTimeout(() => {
+          wrapper.removeChild(heartsContainer);
+        }, 4000);
+      });
+    </script>
+</body>
+</html>
