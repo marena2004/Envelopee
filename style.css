@@ -109,18 +109,18 @@ body {
     transition-delay: 0.5s;
 }
 
-/* Floating hearts container */
 .hearts {
     position: absolute;
-    top: 50%; /* Start at the center of the envelope */
+    bottom: 0; /* Hearts start inside the envelope */
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150%;
+    overflow: visible; /* Allows hearts to float outside */
     pointer-events: none;
-    z-index: 4; /* Ensure hearts appear above the envelope */
+
 }
+
 
 /* Heart style and animation */
 .heart {
@@ -129,7 +129,7 @@ body {
     width: 20px;
     height: 20px;
     background-color: #ff5e73;
-    animation: float 3s infinite ease-in-out;
+    animation: float 5s infinite ease-in-out;
     transform: rotate(45deg);
     border-radius: 50% 50% 0 0;
 }
@@ -156,7 +156,7 @@ body {
 
 @keyframes float {
     0% {
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, 50px) scale(1);
         opacity: 1;
     }
     100% {
